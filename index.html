@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>量子脉冲 · 2025 AI 趋势互动杂志</title>
+
+  <title>AI Magazine 2025 · 互动科技杂志</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Oswald:wght@500&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Oswald:wght@400;600&display=swap" rel="stylesheet" />
+
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
@@ -21,11 +25,13 @@
           },
           colors: {
             tech: {
-              dark: '#070A12',
-              mid: '#0C1324',
-              glow: '#22D3EE',
+
+              dark: '#080B14',
+              mid: '#0E172A',
+              glow: '#60A5FA',
               violet: '#8B5CF6',
-              blue: '#60A5FA',
+              cyan: '#22D3EE',
+
             },
           },
         },
@@ -72,54 +78,21 @@
     }
 
     .glass-panel {
-      background: rgba(255, 255, 255, 0.05);
+
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(16px);
+    }
+
+    .neon-ring {
+      box-shadow: 0 0 60px rgba(34, 211, 238, 0.15), 0 0 120px rgba(139, 92, 246, 0.1);
+
     }
 
     .pages-container {
       transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .page-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-
-    .column-text {
-      column-count: 2;
-      column-gap: 2.25rem;
-      text-align: justify;
-    }
-
-    .column-text p {
-      break-inside: avoid;
-    }
-
-    .image-frame {
-      position: relative;
-      overflow: hidden;
-      border-radius: 1.5rem;
-      border: 1px solid rgba(96, 165, 250, 0.2);
-      box-shadow: 0 0 60px rgba(34, 211, 238, 0.15);
-    }
-
-    .image-frame::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, rgba(7, 10, 18, 0.15), rgba(7, 10, 18, 0.85));
-      mix-blend-mode: screen;
-    }
-
-    .image-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(1.1) contrast(1.1);
-    }
 
     .loader {
       border: 3px solid rgba(255, 255, 255, 0.12);
@@ -133,6 +106,60 @@
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.75rem;
+
+      
+    }
+
+    .column-text {
+      column-count: 2;
+
+      column-gap: 2.5rem;
+
+      text-align: justify;
+    }
+
+    .column-text p {
+      break-inside: avoid;
+    }
+
+    .image-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(96, 165, 250, 0.2);
+
+    }
+
+    .image-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+
+      background: linear-gradient(120deg, rgba(8, 11, 20, 0.2), rgba(8, 11, 20, 0.8));
+
+      mix-blend-mode: screen;
+    }
+
+    .image-frame img {
+
+      filter: saturate(1.1) contrast(1.1);
+      transform: scale(1.02);
+    }
+
+    .toc-item {
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .toc-item:hover {
+      transform: translateY(-2px);
+      background: rgba(96, 165, 250, 0.12);
+
     }
   </style>
 </head>
@@ -192,7 +219,9 @@
     <div class="p-4 border-b border-white/10 bg-gradient-to-r from-sky-900/40 to-transparent flex justify-between items-center">
       <div class="flex items-center gap-2">
         <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-        <span class="text-white font-bold text-sm">量子脉冲 · 趋势问答</span>
+
+        <span class="text-white font-bold text-sm">2025 AI 趋势问答助手</span>
+
       </div>
       <button onclick="toggleChat()" class="text-gray-400 hover:text-white">
         <i data-lucide="chevron-down" class="w-5 h-5"></i>
@@ -204,7 +233,9 @@
           <i data-lucide="bot" class="w-4 h-4 text-white"></i>
         </div>
         <div class="bg-white/10 p-3 rounded-lg rounded-tl-none text-xs text-gray-200">
-          你好！我是《量子脉冲》互动助手。你可以问我：
+
+          你好！我是这份 AI 趋势报告的智能助手。你可以问我：
+
           <ul class="list-disc pl-4 mt-2 space-y-1 text-gray-400">
             <li>哪几个趋势最值得投资？</li>
             <li>解释一下什么是“具身智能”。</li>
@@ -223,273 +254,335 @@
     </div>
   </div>
 
-  <div class="page-viewport relative w-full max-w-[900px] aspect-[1/1.414] shadow-2xl overflow-hidden transition-all duration-700 bg-gradient-to-br from-[#05070F] via-[#0B1120] to-[#0B1B2D] text-white rounded-[28px]">
+
+  <div class="page-viewport relative w-full max-w-[1120px] aspect-[1/1.414] shadow-2xl overflow-hidden transition-all duration-700 bg-gradient-to-br from-[#05070F] via-[#0B1120] to-[#0B1B2D] text-white rounded-[32px] neon-ring">
     <div class="absolute inset-0 pointer-events-none opacity-30">
-      <div class="absolute -top-24 -right-24 w-[520px] h-[520px] bg-sky-500 rounded-full mix-blend-screen blur-[140px] opacity-30"></div>
-      <div class="absolute -bottom-48 left-0 w-[480px] h-[480px] bg-violet-500 rounded-full mix-blend-screen blur-[160px] opacity-25"></div>
-      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 56px 56px;"></div>
+      <div class="absolute -top-24 -right-20 w-[540px] h-[540px] bg-sky-500 rounded-full mix-blend-screen blur-[120px] opacity-30"></div>
+      <div class="absolute -bottom-40 left-0 w-[480px] h-[480px] bg-violet-500 rounded-full mix-blend-screen blur-[140px] opacity-25"></div>
+      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 60px 60px;"></div>
     </div>
 
-    <div id="pages-container" class="pages-container flex h-full w-[700%] relative z-10">
-      <section class="magazine-page w-1/6 h-full flex-shrink-0 flex flex-col p-12">
+    <div id="pages-container" class="pages-container flex h-full w-[800%] relative z-10">
+      <section class="magazine-page w-1/8 h-full flex-shrink-0 flex flex-col p-14">
         <header class="flex justify-between items-start border-b border-white/10 pb-6">
           <div>
-            <p class="text-xs tracking-[0.3em] text-sky-300 font-bold uppercase">Quantum Pulse</p>
-            <p class="text-[10px] tracking-[0.35em] text-slate-400">TECH INTERACTIVE MAGAZINE</p>
+            <p class="text-xs tracking-[0.3em] text-sky-300 font-bold uppercase">AIMAGAZINE · 2025</p>
+            <p class="text-[10px] tracking-[0.35em] text-slate-400">TECH INTERACTIVE EDITION</p>
           </div>
-          <div class="text-xs text-slate-400">2025 · Vol.01</div>
+          <div class="text-xs text-slate-400">Vol. 01</div>
         </header>
 
-        <div class="flex-grow grid grid-cols-[1.05fr_0.95fr] gap-10 items-center mt-8">
+        <div class="flex-grow grid grid-cols-[1.1fr_0.9fr] gap-12 items-center mt-8">
           <div>
             <h1 class="text-6xl font-black leading-tight tracking-tight text-white">
-              量子脉冲
-              <span class="block text-2xl font-medium text-slate-300 mt-3">2025 AI 趋势互动杂志</span>
+              2025 年度 AI 十大趋势
             </h1>
             <p class="text-base text-slate-300 mt-6 leading-relaxed">
-              以科技视觉重构杂志阅读体验，用更轻的文字密度和更强的图像叙事呈现 2025 AI 产业跃迁。点击标题可展开全文，与 AI 助手互动获取深度解读。
+              面向未来的科技杂志，提供互动解读、AI 伴读与深度趋势洞察。每篇文章将拆分为 4-6 个双数页，强调图文呼吸感与阅读节奏。
             </p>
             <div class="mt-8 flex flex-wrap gap-3 text-xs text-slate-300">
-              <span class="px-3 py-1 rounded-full border border-white/10 bg-white/5">A4 竖版排版</span>
-              <span class="px-3 py-1 rounded-full border border-white/10 bg-white/5">每篇 4-6 页</span>
-              <span class="px-3 py-1 rounded-full border border-white/10 bg-white/5">互动阅读</span>
+              <span class="px-3 py-1 rounded-full border border-white/10 bg-white/5">互动目录</span>
+              <span class="px-3 py-1 rounded-full border border-white/10 bg-white/5">点击标题查看全文</span>
+              <span class="px-3 py-1 rounded-full border border-white/10 bg-white/5">AI 对话助手</span>
             </div>
           </div>
           <div class="image-frame h-[420px]">
-            <img src="https://image.pollinations.ai/prompt/ultra%20futuristic%20magazine%20cover%20glowing%20neon%20grid%20ai%20interface%20deep%20space%20cinematic%20lighting?width=800&height=1100&nologo=true" alt="Quantum Pulse Cover" />
+            <img src="https://image.pollinations.ai/prompt/ultra%20futuristic%20ai%20magazine%20cover%20glowing%20neon%20grid%20holographic%20interface%20deep%20space%20cinematic%20lighting?width=800&height=1000&nologo=true" alt="AI Magazine Cover" class="w-full h-full object-cover" />
+
           </div>
         </div>
 
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
-          <span>封面 · 科技叙事起点</span>
+
+          <span>封面 · 未来科技视觉系统</span>
+
           <span class="text-white/20 font-display text-3xl">01</span>
         </footer>
       </section>
 
-      <section class="magazine-page w-1/6 h-full flex-shrink-0 p-12">
+
+      <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
+
         <header class="flex justify-between items-center">
           <h2 class="text-3xl font-bold">目录 · 2025 AI 特刊</h2>
           <span class="text-xs text-slate-400">CONTENTS</span>
         </header>
-        <div class="mt-8 grid grid-cols-2 gap-5 text-sm text-slate-300">
+
+        <div class="mt-8 grid grid-cols-2 gap-6 text-sm text-slate-300">
           <div class="space-y-4">
-            <div class="glass-panel rounded-2xl p-4">
+            <div class="toc-item glass-panel rounded-2xl p-4">
               <p class="text-sky-300 text-xs tracking-[0.2em]">专题一</p>
               <p class="font-semibold">2025 年度 AI 十大趋势总结 · 技术形态的跃迁</p>
             </div>
-            <div class="glass-panel rounded-2xl p-4">
+            <div class="toc-item glass-panel rounded-2xl p-4">
               <p class="text-sky-300 text-xs tracking-[0.2em]">专题二</p>
               <p class="font-semibold">AI 产业格局新图谱：产业链重构与基础设施升级</p>
             </div>
-            <div class="glass-panel rounded-2xl p-4">
+            <div class="toc-item glass-panel rounded-2xl p-4">
               <p class="text-sky-300 text-xs tracking-[0.2em]">专题三</p>
               <p class="font-semibold">Agent 与具身智能的崛起（从 Chatbot 到执行体）</p>
             </div>
-            <div class="glass-panel rounded-2xl p-4">
+            <div class="toc-item glass-panel rounded-2xl p-4">
               <p class="text-sky-300 text-xs tracking-[0.2em]">专题四</p>
               <p class="font-semibold">大模型推理时代：多模态应用与 AI 编程革新</p>
             </div>
-            <div class="glass-panel rounded-2xl p-4">
+            <div class="toc-item glass-panel rounded-2xl p-4">
+
               <p class="text-sky-300 text-xs tracking-[0.2em]">专题五</p>
               <p class="font-semibold">CUA（Computer-Using Agent）概念与实现方式</p>
             </div>
           </div>
           <div class="space-y-4">
-            <div class="glass-panel rounded-2xl p-4">
+
+            <div class="toc-item glass-panel rounded-2xl p-4">
               <p class="text-cyan-300 text-xs tracking-[0.2em]">专题六</p>
               <p class="font-semibold">六大 AI 巨头战略比较：Google、OpenAI、阿里云、华为、百度、火山引擎</p>
             </div>
-            <div class="glass-panel rounded-2xl p-4">
+            <div class="toc-item glass-panel rounded-2xl p-4">
               <p class="text-cyan-300 text-xs tracking-[0.2em]">专题七</p>
               <p class="font-semibold">企业级 AI 实践：智能体落地与央企数智化转型</p>
             </div>
-            <div class="glass-panel rounded-2xl p-4">
+            <div class="toc-item glass-panel rounded-2xl p-4">
               <p class="text-cyan-300 text-xs tracking-[0.2em]">专题八</p>
               <p class="font-semibold">传统软件 + AI 原生服务商的组织再构</p>
             </div>
-            <div class="glass-panel rounded-2xl p-4">
+            <div class="toc-item glass-panel rounded-2xl p-4">
               <p class="text-cyan-300 text-xs tracking-[0.2em]">专题九</p>
               <p class="font-semibold">面向消费者的 AI 产品：AIGC 助手与 “Agentic Internet” 生态</p>
             </div>
-            <div class="glass-panel rounded-2xl p-4">
+            <div class="toc-item glass-panel rounded-2xl p-4">
+
               <p class="text-cyan-300 text-xs tracking-[0.2em]">专题十</p>
               <p class="font-semibold">算力成本降低与 AI 应用“普惠化”新格局</p>
             </div>
           </div>
         </div>
-        <div class="mt-6 text-xs text-slate-400 space-y-2">
-          <p>AI 治理与合规：政策与规范的新进展</p>
-          <p>轻量板块：图像/视频生成前沿、2025 黑科技概念榜、2026 趋势预测与企业战略展望</p>
+
+        <div class="mt-6 text-xs text-slate-400">
+          <p>后续版块：AI 治理与合规、图像/视频生成前沿、黑科技术语科普、2026 趋势预测 —— 请在下方数据区补充文章内容。</p>
         </div>
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
-          <span>目录页 · 可持续扩展</span>
+          <span>目录页 · 可扩展文章结构</span>
+
           <span class="text-white/20 font-display text-3xl">02</span>
         </footer>
       </section>
 
-      <section class="magazine-page w-1/6 h-full flex-shrink-0 p-12">
+
+      <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
         <header class="flex items-center justify-between">
           <div>
             <p class="text-xs uppercase tracking-[0.25em] text-sky-300">Feature · Article 01</p>
-            <h2 class="text-4xl font-bold mt-2">2025 年度 AI 十大趋势</h2>
-            <p class="text-sm text-slate-400 mt-2">TOP 10 TRENDS IN ARTIFICIAL INTELLIGENCE · 第 1 / 4 页</p>
+            <h2 class="text-4xl font-bold mt-2">2025 年度 AI 十大趋势总结</h2>
+            <p class="text-sm text-slate-400 mt-2">技术形态的跃迁 · 第 1 / 6 页</p>
+
           </div>
           <button onclick="openArticleDetail()" class="ai-trigger px-4 py-2 text-xs rounded-full border border-sky-400/40 text-sky-200 hover:bg-sky-500/20">
             点击标题查看全文
           </button>
         </header>
-        <div class="page-grid mt-8">
+
+        <div class="page-grid mt-10">
           <div class="space-y-6">
             <div class="glass-panel rounded-2xl p-6">
-              <p class="text-xs text-sky-300 uppercase tracking-[0.2em]">卷首语 / Intro</p>
+              <p class="text-xs text-sky-300 uppercase tracking-[0.2em]">导语</p>
               <p class="text-base text-slate-200 leading-relaxed mt-3">
-                我们正站在历史的转折点。从算力重构产业基石，到 Agentic 互联网开启交互新纪元。AI 技术正以前所未有的速度渗透物理世界，中国力量在开源生态中强势崛起。这是从“应用”迈向“深度渗透”的关键一年。
+                2025 的 AI 生态进入系统级重构：从算力工厂、芯片演进到多模态应用的爆发，技术栈与商业模式同时刷新。本文将以六个双数页展开“趋势图谱”，帮助读者快速建立技术与产业的双重坐标。
+
               </p>
             </div>
             <div class="glass-panel rounded-2xl p-6">
               <p class="text-xs text-slate-400">阅读方式</p>
               <ul class="mt-3 text-sm text-slate-300 space-y-2 list-disc pl-4">
-                <li>每页双栏文本，保持低密度阅读。</li>
-                <li>标题可点击打开完整长文内容。</li>
-                <li>右侧配科技感图片，形成图文对比。</li>
+
+                <li>每页两栏，保持轻阅读密度。</li>
+                <li>趋势标题可点击打开全量解析。</li>
+                <li>右侧配高质科技视觉图像。</li>
+
               </ul>
             </div>
           </div>
           <div class="image-frame h-[420px]">
-            <img src="https://image.pollinations.ai/prompt/futuristic%20ai%20city%20holographic%20data%20streams%20glowing%20blue%20purple%20cinematic%20lighting?width=900&height=1100&nologo=true" alt="AI Intro Visual" />
+
+            <img src="https://image.pollinations.ai/prompt/ai%20data%20center%20megascale%20server%20hall%20neon%20blue%20lighting%20cinematic%20wide%20shot?width=900&height=1000&nologo=true" alt="AI Infrastructure" class="w-full h-full object-cover" />
           </div>
         </div>
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
-          <span>趋势综述 · 卷首语</span>
+          <span>趋势综述 · 内容更易扩展</span>
+
           <span class="text-white/20 font-display text-3xl">03</span>
         </footer>
       </section>
 
-      <section class="magazine-page w-1/6 h-full flex-shrink-0 p-12">
+
+      <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
         <header class="flex items-center justify-between">
           <div>
-            <p class="text-xs uppercase tracking-[0.25em] text-violet-300">Part 1 · Infrastructure Reboot</p>
-            <h2 class="text-3xl font-bold mt-2">基础设施重塑</h2>
-            <p class="text-sm text-slate-400 mt-2">第 2 / 4 页</p>
+            <p class="text-xs uppercase tracking-[0.25em] text-violet-300">Trends 01-02</p>
+            <h2 class="text-3xl font-bold mt-2">算力基建化 · 芯片 AI 化</h2>
+            <p class="text-sm text-slate-400 mt-2">第 2 / 6 页</p>
           </div>
-          <button onclick="analyzeTrend('基础设施重塑', '算力基建与芯片 AI 化带来产业底座重构。')" class="ai-trigger px-4 py-2 text-xs rounded-full border border-violet-400/40 text-violet-200 hover:bg-violet-500/20">
+          <button onclick="analyzeTrend('算力基建化', '数据中心进入算力工厂时代。')" class="ai-trigger px-4 py-2 text-xs rounded-full border border-violet-400/40 text-violet-200 hover:bg-violet-500/20">
             AI 解读
           </button>
         </header>
-        <div class="page-grid mt-8">
+        <div class="page-grid mt-10">
           <div class="column-text text-sm text-slate-300 leading-relaxed space-y-4">
-            <p><strong class="text-white">01 算力基建化 · Data Center as a Factory</strong><br />
-              数据中心不再仅是托管场所，而是集成了海量计算、存储的“算力工厂”。算力需求狂飙，已成为驱动智能产业发展的第一大引擎。</p>
-            <p><strong class="text-white">02 芯片 AI 化 · AI-Native Chips</strong><br />
-              为了适应神经网络，芯片架构正从“通用计算”向“AI 原生”剧变。NPU 普及与 ASIC 增长，打破了传统 CPU/GPU 的垄断逻辑。</p>
+            <p><strong class="text-white">趋势 01：算力基建化</strong><br />
+              数据中心正在变成“算力工厂”，不仅提供 GPU 算力，还承载模型训练、推理服务与数据治理。云厂商、运营商与地方政府共同推进算力集群，形成全国级算力网络。</p>
+            <p><strong class="text-white">趋势 02：芯片 AI 化</strong><br />
+              芯片从“通用计算”转向“AI 原生”，NPU 与 ASIC 成为规模化部署新入口。算法与硬件协同设计，推动推理效率跃迁，降低大模型落地门槛。</p>
+            <p class="text-slate-400">补充空间：你可以在这里继续增加案例、数据或评论，保持两栏文本呼吸感。</p>
           </div>
           <div class="image-frame h-[420px]">
-            <img src="https://image.pollinations.ai/prompt/ai%20data%20center%20mega%20server%20hall%20neon%20blue%20lighting%20cinematic%20wide%20shot?width=900&height=1100&nologo=true" alt="Infrastructure Reboot" />
+            <img src="https://image.pollinations.ai/prompt/ai%20chip%20wafer%20neon%20circuit%20blue%20violet%20glow%20macro%20shot%20futuristic?width=900&height=1000&nologo=true" alt="AI Chip" class="w-full h-full object-cover" />
           </div>
         </div>
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
-          <span>Part 1 · 基础设施重塑</span>
+          <span>趋势详解 · 轻文字密度</span>
+
           <span class="text-white/20 font-display text-3xl">04</span>
         </footer>
       </section>
 
-      <section class="magazine-page w-1/6 h-full flex-shrink-0 p-12">
+
+      <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
         <header class="flex items-center justify-between">
           <div>
-            <p class="text-xs uppercase tracking-[0.25em] text-cyan-300">Part 2 · Model Evolution</p>
-            <h2 class="text-3xl font-bold mt-2">模型进化论</h2>
-            <p class="text-sm text-slate-400 mt-2">第 3 / 4 页</p>
+            <p class="text-xs uppercase tracking-[0.25em] text-cyan-300">Trends 03-04</p>
+            <h2 class="text-3xl font-bold mt-2">模型架构创新 · 推理侧革命</h2>
+            <p class="text-sm text-slate-400 mt-2">第 3 / 6 页</p>
           </div>
-          <button onclick="analyzeTrend('模型进化论', '架构创新与推理能力重塑模型竞争格局。')" class="ai-trigger px-4 py-2 text-xs rounded-full border border-cyan-400/40 text-cyan-200 hover:bg-cyan-500/20">
+          <button onclick="analyzeTrend('推理侧革命', '推理能力成为新竞争高地。')" class="ai-trigger px-4 py-2 text-xs rounded-full border border-cyan-400/40 text-cyan-200 hover:bg-cyan-500/20">
             AI 解读
           </button>
         </header>
-        <div class="page-grid mt-8">
+        <div class="page-grid mt-10">
           <div class="column-text text-sm text-slate-300 leading-relaxed space-y-4">
-            <p><strong class="text-white">03 架构即阶层 · Architecture Defines Class</strong><br />
-              预训练决定模型梯队，而架构创新（如 MoE、线性注意力）决定预训练水平。新架构正在打破 Transformer 的效率瓶颈，实现更低成本的更大参数。</p>
-            <p><strong class="text-white">04 推理侧革命 · Inference Innovation</strong><br />
-              大模型落地进入“推理时间”。通过让模型“慢思考” (System 2)，利用更长的推理过程解决复杂问题，推理能力成为新的技术竞争高地。</p>
-            <p><strong class="text-white">05 具身智能合流 · Physical AI Convergence</strong><br />
-              信息 AI 正走向物理 AI。世界模型成为核心，赋予机器人理解物理规律的“大脑”，具身智能迎来从实验室走向商业化的风口。</p>
+            <p><strong class="text-white">趋势 03：架构即阶层</strong><br />
+              新的架构创新正在打破传统 Transformer 的效率瓶颈，MoE、多塔结构与稀疏激活成为新路线。谁能更快建立架构生态，谁就拥有新的“预训练阶层”。</p>
+            <p><strong class="text-white">趋势 04：推理侧革命</strong><br />
+              “慢思考”推理将模型从快速回答升级为高质量推理。链式思考、工具调用与多代理协作成为企业级 AI 的基础能力。</p>
+            <p class="text-slate-400">补充空间：添加典型产品、论文或企业案例。</p>
           </div>
           <div class="image-frame h-[420px]">
-            <img src="https://image.pollinations.ai/prompt/futuristic%20neural%20network%20holographic%20nodes%20cyan%20violet%20dark%20tech%20background%20cinematic?width=900&height=1100&nologo=true" alt="Model Evolution" />
+            <img src="https://image.pollinations.ai/prompt/futuristic%20ai%20neural%20network%20visualization%20cyan%20violet%20holographic%20nodes%20dark%20tech%20background?width=900&height=1000&nologo=true" alt="Model Evolution" class="w-full h-full object-cover" />
           </div>
         </div>
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
-          <span>Part 2 · 模型进化论</span>
+          <span>趋势详解 · 架构与推理</span>
+
           <span class="text-white/20 font-display text-3xl">05</span>
         </footer>
       </section>
 
-      <section class="magazine-page w-1/6 h-full flex-shrink-0 p-12">
+
+      <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
         <header class="flex items-center justify-between">
           <div>
-            <p class="text-xs uppercase tracking-[0.25em] text-emerald-300">Part 3-4 · Application & China Moment</p>
-            <h2 class="text-3xl font-bold mt-2">应用新版图 · 中国时间</h2>
-            <p class="text-sm text-slate-400 mt-2">第 4 / 4 页</p>
+            <p class="text-xs uppercase tracking-[0.25em] text-emerald-300">Trends 05-06</p>
+            <h2 class="text-3xl font-bold mt-2">具身智能 · Agentic 互联网</h2>
+            <p class="text-sm text-slate-400 mt-2">第 4 / 6 页</p>
           </div>
-          <button onclick="analyzeTrend('应用新版图', 'Agentic 互联网与开源生态引领新秩序。')" class="ai-trigger px-4 py-2 text-xs rounded-full border border-emerald-400/40 text-emerald-200 hover:bg-emerald-500/20">
+          <button onclick="analyzeTrend('具身智能合流', '信息 AI 走向物理 AI。')" class="ai-trigger px-4 py-2 text-xs rounded-full border border-emerald-400/40 text-emerald-200 hover:bg-emerald-500/20">
             AI 解读
           </button>
         </header>
-        <div class="page-grid mt-8">
+        <div class="page-grid mt-10">
           <div class="column-text text-sm text-slate-300 leading-relaxed space-y-4">
-            <p><strong class="text-white">06 Agentic 互联网 · Traffic Entry Point Reshaped</strong><br />
-              AI Agent 重塑流量入口。从“人找服务”转变为“服务找人”，自主规划、执行任务的智能体将逐渐取代传统 App 和搜索引擎。</p>
-            <p><strong class="text-white">07 多模态生产力 · Multimodal Productivity</strong><br />
-              视频生成、3D 建模与代码生成 (Vibe Coding) 依次爆发。AI 不再只是辅助，而是成为影视、游戏开发及软件工程的标准生产工具。</p>
-            <p><strong class="text-white">08 硬件百端齐放 · AI Hardware Explosion</strong><br />
-              “换脑”时刻已至。手机、PC、眼镜甚至玩具都在植入端侧大模型，实现低延时、高隐私的本地化智能体验。</p>
-            <p><strong class="text-white">09 AI4S 突破 · Science Acceleration</strong><br />
-              AI 达到数理博士水平。从工具进化为“AI 科学家”，在材料、生物、化学等领域自主发现规律，加速 AGI 的最终实现。</p>
-            <p><strong class="text-white">10 开源主导权 · Open Source Leadership</strong><br />
-              开源 AI 进入“中国时间”。中国企业与机构正从跟随者变为引领者，通过强大的开源模型与生态构建，走出一条自主可控的 AGI 路线。</p>
+            <p><strong class="text-white">趋势 05：具身智能合流</strong><br />
+              世界模型与多模态感知推动机器人拥有“可执行的理解力”。制造、物流、服务行业将率先落地具身智能应用。</p>
+            <p><strong class="text-white">趋势 06：Agentic 互联网</strong><br />
+              AI Agent 从助手变成“执行体”，重塑流量入口。企业开始围绕 Agent 构建新的触点和服务流程。</p>
+            <p class="text-slate-400">补充空间：可在此处扩展到更多趋势或插入数据卡片。</p>
           </div>
           <div class="image-frame h-[420px]">
-            <img src="https://image.pollinations.ai/prompt/futuristic%20smart%20city%20holographic%20agents%20floating%20interfaces%20gold%20cyan%20tech%20background?width=900&height=1100&nologo=true" alt="Application Landscape" />
+            <img src="https://image.pollinations.ai/prompt/futuristic%20robot%20assistant%20in%20smart%20city%20neon%20green%20holographic%20interface%20cinematic%20lighting?width=900&height=1000&nologo=true" alt="Embodied AI" class="w-full h-full object-cover" />
           </div>
         </div>
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
-          <span>Part 3-4 · 应用新版图 & 中国时间</span>
+          <span>趋势详解 · 具身智能与 Agent</span>
+
           <span class="text-white/20 font-display text-3xl">06</span>
         </footer>
       </section>
 
-      <section class="magazine-page w-1/6 h-full flex-shrink-0 flex flex-col p-12">
-        <header class="flex justify-between items-start border-b border-white/10 pb-6">
+
+      <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
+        <header class="flex items-center justify-between">
           <div>
-            <p class="text-xs tracking-[0.3em] text-sky-300 font-bold uppercase">Quantum Pulse</p>
-            <p class="text-[10px] tracking-[0.35em] text-slate-400">BACK COVER</p>
+            <p class="text-xs uppercase tracking-[0.25em] text-amber-300">Trends 07-10</p>
+            <h2 class="text-3xl font-bold mt-2">多模态生产力 · 硬件百端齐放 · AI4S · 开源主导权</h2>
+            <p class="text-sm text-slate-400 mt-2">第 5 / 6 页</p>
           </div>
-          <div class="text-xs text-slate-400">2025 · AI EDITION</div>
+          <button onclick="openArticleDetail()" class="ai-trigger px-4 py-2 text-xs rounded-full border border-amber-400/40 text-amber-200 hover:bg-amber-500/20">
+            打开趋势全文
+          </button>
         </header>
-        <div class="flex-grow grid grid-cols-[0.95fr_1.05fr] gap-10 items-center mt-8">
-          <div class="image-frame h-[420px]">
-            <img src="https://image.pollinations.ai/prompt/abstract%20quantum%20pulse%20wave%20neon%20lines%20deep%20blue%20purple%20gradient%20minimal%20futuristic?width=800&height=1100&nologo=true" alt="Back Cover" />
+        <div class="page-grid mt-10">
+          <div class="column-text text-sm text-slate-300 leading-relaxed space-y-4">
+            <p><strong class="text-white">趋势 07：多模态生产力</strong><br />
+              视频、3D、代码生成形成标准化生产工具，企业运营进入“全栈内容工厂”。</p>
+            <p><strong class="text-white">趋势 08：硬件百端齐放</strong><br />
+              从手机、PC 到车载、眼镜，端侧模型让 AI 具备低延时与高隐私的交互优势。</p>
+            <p><strong class="text-white">趋势 09：AI4S 突破</strong><br />
+              AI 成为科学研究的“超级助理”，在材料、生物、能源方向加速发现。</p>
+            <p><strong class="text-white">趋势 10：开源主导权</strong><br />
+              中国开源模型崛起，形成自主可控的生态与落地路径。</p>
           </div>
-          <div>
-            <h3 class="text-4xl font-bold">AI 治理与合规</h3>
-            <p class="text-sm text-slate-300 mt-4 leading-relaxed">
-              关注政策、规范与可信 AI 的新进展，探讨企业如何在合规框架内释放创新潜能。
-            </p>
-            <div class="mt-6 space-y-2 text-xs text-slate-400">
-              <p>轻量板块：图像/视频生成前沿</p>
-              <p>2025 十大黑科技概念榜（术语科普）</p>
-              <p>2026 年 AI 趋势预测与企业战略展望</p>
-            </div>
-            <p class="text-xs text-slate-500 mt-6">Source: 量子位智库 2025 年度 AI 十大趋势报告。</p>
+          <div class="image-frame h-[420px]">
+            <img src="https://image.pollinations.ai/prompt/futuristic%20digital%20ecosystem%20holographic%20applications%20glowing%20gold%20and%20cyan%20tech%20background?width=900&height=1000&nologo=true" alt="AI Ecosystem" class="w-full h-full object-cover" />
           </div>
         </div>
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
-          <span>封底 · 延展阅读</span>
+          <span>趋势详解 · 生态与开源</span>
           <span class="text-white/20 font-display text-3xl">07</span>
+        </footer>
+      </section>
+
+      <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
+        <header class="flex items-center justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-300">Article Workspace</p>
+            <h2 class="text-3xl font-bold mt-2">后续文章编辑区</h2>
+            <p class="text-sm text-slate-400 mt-2">第 6 / 6 页 · 内容占位</p>
+          </div>
+          <button onclick="openEditGuide()" class="ai-trigger px-4 py-2 text-xs rounded-full border border-slate-400/40 text-slate-200 hover:bg-white/10">
+            查看编辑指南
+          </button>
+        </header>
+        <div class="page-grid mt-10">
+          <div class="space-y-5 text-sm text-slate-300">
+            <div class="glass-panel rounded-2xl p-6">
+              <p class="font-semibold text-white">可扩展模块</p>
+              <ul class="mt-3 space-y-2 list-disc pl-4">
+                <li>新增文章时复制“Feature · Article”结构，并调整页数。</li>
+                <li>每篇文章建议 4-6 个双数页，保证节奏与可读性。</li>
+                <li>可将文本数据放入 <code>articleData</code> 变量中统一管理。</li>
+              </ul>
+            </div>
+            <div class="glass-panel rounded-2xl p-6">
+              <p class="font-semibold text-white">栏目建议</p>
+              <p class="mt-3 text-slate-300 leading-relaxed">
+                AI 治理与合规、图像/视频生成前沿、2025 黑科技术语科普、2026 趋势预测与企业战略展望。
+              </p>
+            </div>
+          </div>
+          <div class="image-frame h-[420px]">
+            <img src="https://image.pollinations.ai/prompt/futuristic%20editorial%20workspace%20floating%20holograms%20clean%20white%20light%20blue%20tech%20aesthetic?width=900&height=1000&nologo=true" alt="Editorial Workspace" class="w-full h-full object-cover" />
+          </div>
+        </div>
+        <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
+          <span>编辑区 · 预留空间</span>
+          <span class="text-white/20 font-display text-3xl">08</span>
+
         </footer>
       </section>
     </div>
 
-    <div class="no-print absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-5 z-20 p-2 bg-[#050A14]/60 backdrop-blur-md rounded-full border border-white/10">
+
+    <div class="no-print absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-6 z-20 p-2 bg-[#050A14]/60 backdrop-blur-md rounded-full border border-white/10">
+
       <button onclick="prevPage()" class="text-gray-300 hover:text-white transition-colors p-1">
         <i data-lucide="chevron-left" class="w-6 h-6"></i>
       </button>
@@ -501,6 +594,9 @@
         <div class="w-2 h-2 rounded-full bg-white/30 transition-all hover:bg-white/50 cursor-pointer" onclick="goToPage(4)"></div>
         <div class="w-2 h-2 rounded-full bg-white/30 transition-all hover:bg-white/50 cursor-pointer" onclick="goToPage(5)"></div>
         <div class="w-2 h-2 rounded-full bg-white/30 transition-all hover:bg-white/50 cursor-pointer" onclick="goToPage(6)"></div>
+
+        <div class="w-2 h-2 rounded-full bg-white/30 transition-all hover:bg-white/50 cursor-pointer" onclick="goToPage(7)"></div>
+
       </div>
       <button onclick="nextPage()" class="text-gray-300 hover:text-white transition-colors p-1">
         <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -512,12 +608,16 @@
     lucide.createIcons();
 
     let currentPage = 0;
-    const totalPages = 7;
+
+    const totalPages = 8;
+
     const pagesContainer = document.getElementById('pages-container');
     const indicators = document.getElementById('page-indicators').children;
 
     function updatePage() {
-      pagesContainer.style.transform = `translateX(-${currentPage * (100 / totalPages)}%)`;
+
+      pagesContainer.style.transform = `translateX(-${currentPage * 12.5}%)`;
+
       for (let i = 0; i < totalPages; i++) {
         if (i === currentPage) {
           indicators[i].classList.remove('bg-white/30');
@@ -645,8 +745,27 @@
         loadingSpinner.classList.add('hidden');
         modalContent.innerHTML = `
           <p><strong>全文占位说明：</strong></p>
-          <p>这里将放置完整的文章内容。建议包含：趋势总述、重点案例、结论与行动建议。</p>
-          <p>可在后续直接替换 HTML 内容或通过数据渲染。</p>
+
+          <p>这里将放置完整的文章内容。你可以在 <code>articleData</code> 里统一编辑段落，然后在这里渲染。</p>
+          <p>建议包含：趋势总述、重点案例、结论与行动建议。</p>
+        `;
+      }, 600);
+    }
+
+    function openEditGuide() {
+      openModal('编辑指南 · 如何扩展更多文章');
+      modalContent.innerHTML = '';
+      loadingSpinner.classList.remove('hidden');
+      setTimeout(() => {
+        loadingSpinner.classList.add('hidden');
+        modalContent.innerHTML = `
+          <ul>
+            <li><strong>复制页模板：</strong>使用 <code>magazine-page</code> 模块复制新增页面。</li>
+            <li><strong>设置页数：</strong>保持每篇文章 4-6 个双数页。</li>
+            <li><strong>调文本密度：</strong>使用 <code>.column-text</code> 保持双栏阅读。</li>
+            <li><strong>替换图片：</strong>更换 image.pollinations.ai 链接以获取更强科技感画面。</li>
+          </ul>
+
         `;
       }, 600);
     }
@@ -747,7 +866,9 @@
           backgroundColor: null,
         });
         const link = document.createElement('a');
-        link.download = `QuantumPulse_Page_${currentPage + 1}.png`;
+
+        link.download = `AI_Magazine_Page_${currentPage + 1}.png`;
+
         link.href = canvas.toDataURL('image/png');
         link.click();
       } catch (err) {
@@ -762,7 +883,9 @@
     function toggleTheme() {
       const pageView = document.querySelector('.page-viewport');
       const modalBox = document.querySelector('#ai-modal > div');
-      const nav = document.querySelector('.no-print.absolute.bottom-6');
+
+      const nav = document.querySelector('.no-print.absolute.bottom-8');
+
       const chatBox = document.getElementById('chat-widget');
 
       if (pageView.classList.contains('bg-gradient-to-br')) {
