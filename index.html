@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>量子脉冲 · 2025 AI 趋势互动杂志</title>
+  <title>智向 · 2026 AI 行业趋势与实践</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -68,11 +68,12 @@
     .page-viewport {
       width: var(--a4-width);
       height: var(--a4-height);
-      background: #f8fafc;
+      background: #f4f2ef;
       border-radius: 18px;
       box-shadow: 0 40px 120px rgba(15, 23, 42, 0.4);
       border: 1px solid rgba(148, 163, 184, 0.35);
       overflow: hidden;
+      position: relative;
     }
 
     .pages-container {
@@ -96,7 +97,7 @@
 
     .page-content {
       flex: 1;
-      padding: 0 48px 32px;
+      padding: 0 48px 64px;
       overflow: auto;
     }
 
@@ -148,6 +149,51 @@
       padding: 14px 16px;
       box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
     }
+
+    .cover-page {
+      background-image: url("assets/cover-2026-h1.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .cover-kicker {
+      letter-spacing: 0.4em;
+    }
+
+    .cover-issue {
+      letter-spacing: 0.4em;
+    }
+
+    .cover-overlay {
+      background: rgba(243, 241, 238, 0.82);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover-chip {
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: #475569;
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .page-controls {
+      position: absolute;
+      bottom: 16px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      z-index: 5;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center px-4 py-6 text-ink font-sans">
@@ -155,41 +201,30 @@
     <div class="viewport-scale" id="viewport-scale">
       <div class="page-viewport">
         <div id="pages-container" class="pages-container">
-          <section class="magazine-page">
-            <header class="page-header border-b border-slate-200">
-              <div class="flex items-center justify-between">
-                <div>
-                  <p class="text-xs tracking-[0.3em] text-accent font-bold uppercase">Quantum Pulse</p>
-                  <p class="text-[11px] tracking-[0.3em] text-slate-500">AI TREND INTERACTIVE MAGAZINE</p>
-                </div>
-                <p class="text-xs text-slate-500">2025 · Vol.01</p>
-              </div>
-            </header>
-            <div class="page-content flex flex-col justify-between">
-              <div class="grid grid-cols-[1.1fr_0.9fr] gap-8 items-center mt-6">
-                <div>
-                  <h1 class="text-5xl font-black text-slate-900 leading-tight">
-                    量子脉冲
-                    <span class="block text-2xl font-semibold text-slate-500 mt-3">2025 AI 趋势互动杂志</span>
-                  </h1>
-                  <p class="mt-6 text-base text-slate-600 leading-relaxed">
-                    以科技视觉重构杂志阅读体验：更轻的文字密度、更强的图像叙事与可互动的趋势解读。
-                  </p>
-                  <div class="mt-6 flex flex-wrap gap-3 text-xs text-slate-500">
-                    <span class="px-3 py-1 rounded-full border border-slate-200">A4 竖版</span>
-                    <span class="px-3 py-1 rounded-full border border-slate-200">互动翻页</span>
-                    <span class="px-3 py-1 rounded-full border border-slate-200">AI 问答</span>
+          <section class="magazine-page cover-page">
+            <div class="cover-overlay">
+              <header class="page-header">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-xs text-slate-500 cover-kicker font-semibold">AI SIGNAL</p>
+                    <p class="text-[11px] tracking-[0.32em] text-slate-500 mt-2">AI INDUSTRY MAGAZINE</p>
                   </div>
+                  <p class="text-xs text-slate-500 cover-issue">2026 · H1</p>
                 </div>
-                <div class="image-frame h-[420px]">
-                  <img src="https://image.pollinations.ai/prompt/ultra%20futuristic%20magazine%20cover%20clean%20neon%20grid%20ai%20interface%20minimal%20tech%20lighting?width=800&height=1100&nologo=true" alt="Quantum Pulse Cover" />
+              </header>
+              <div class="page-content flex flex-col justify-center">
+                <div class="max-w-md">
+                  <h1 class="text-6xl font-black text-slate-900 leading-tight">智向</h1>
+                  <p class="mt-4 text-lg text-slate-600 font-medium">2026 AI 行业趋势与实践</p>
+                  <div class="mt-10 flex flex-wrap gap-3">
+                    <span class="cover-chip">趋势洞察</span>
+                    <span class="cover-chip">技术范式</span>
+                    <span class="cover-chip">产业变革</span>
+                    <span class="cover-chip">产品演进</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <footer class="page-footer border-t border-slate-200 flex justify-between text-xs text-slate-500">
-              <span>封面 · 科技叙事起点</span>
-              <span class="font-display text-xl text-slate-300">01</span>
-            </footer>
           </section>
 
           <section class="magazine-page">
@@ -438,18 +473,17 @@
             </footer>
           </section>
         </div>
+        <div class="no-print page-controls">
+          <button onclick="prevPage()" class="w-10 h-10 rounded-full border border-slate-600 text-slate-200 hover:text-white hover:border-slate-300 transition-colors">
+            <i data-lucide="chevron-left" class="w-5 h-5 mx-auto"></i>
+          </button>
+          <div id="page-indicators" class="flex gap-2"></div>
+          <button onclick="nextPage()" class="w-10 h-10 rounded-full border border-slate-600 text-slate-200 hover:text-white hover:border-slate-300 transition-colors">
+            <i data-lucide="chevron-right" class="w-5 h-5 mx-auto"></i>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="no-print flex items-center gap-4 mt-6">
-    <button onclick="prevPage()" class="w-10 h-10 rounded-full border border-slate-600 text-slate-200 hover:text-white hover:border-slate-300 transition-colors">
-      <i data-lucide="chevron-left" class="w-5 h-5 mx-auto"></i>
-    </button>
-    <div id="page-indicators" class="flex gap-2"></div>
-    <button onclick="nextPage()" class="w-10 h-10 rounded-full border border-slate-600 text-slate-200 hover:text-white hover:border-slate-300 transition-colors">
-      <i data-lucide="chevron-right" class="w-5 h-5 mx-auto"></i>
-    </button>
   </div>
 
   <div id="ai-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4 transition-opacity duration-300 opacity-0">
@@ -662,5 +696,3 @@
   </script>
 </body>
 </html>
-
-
