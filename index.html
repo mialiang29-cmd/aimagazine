@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>AI Magazine 2025 · 互动科技杂志</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Oswald:wght@400;600&display=swap" rel="stylesheet" />
+
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
@@ -21,11 +25,13 @@
           },
           colors: {
             tech: {
+
               dark: '#080B14',
               mid: '#0E172A',
               glow: '#60A5FA',
               violet: '#8B5CF6',
               cyan: '#22D3EE',
+
             },
           },
         },
@@ -72,6 +78,7 @@
     }
 
     .glass-panel {
+
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(16px);
@@ -79,11 +86,13 @@
 
     .neon-ring {
       box-shadow: 0 0 60px rgba(34, 211, 238, 0.15), 0 0 120px rgba(139, 92, 246, 0.1);
+
     }
 
     .pages-container {
       transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
 
     .loader {
       border: 3px solid rgba(255, 255, 255, 0.12);
@@ -103,11 +112,15 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2.75rem;
+
+      
     }
 
     .column-text {
       column-count: 2;
+
       column-gap: 2.5rem;
+
       text-align: justify;
     }
 
@@ -120,17 +133,21 @@
       overflow: hidden;
       border-radius: 1.5rem;
       border: 1px solid rgba(96, 165, 250, 0.2);
+
     }
 
     .image-frame::after {
       content: '';
       position: absolute;
       inset: 0;
+
       background: linear-gradient(120deg, rgba(8, 11, 20, 0.2), rgba(8, 11, 20, 0.8));
+
       mix-blend-mode: screen;
     }
 
     .image-frame img {
+
       filter: saturate(1.1) contrast(1.1);
       transform: scale(1.02);
     }
@@ -142,6 +159,7 @@
     .toc-item:hover {
       transform: translateY(-2px);
       background: rgba(96, 165, 250, 0.12);
+
     }
   </style>
 </head>
@@ -201,7 +219,9 @@
     <div class="p-4 border-b border-white/10 bg-gradient-to-r from-sky-900/40 to-transparent flex justify-between items-center">
       <div class="flex items-center gap-2">
         <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+
         <span class="text-white font-bold text-sm">2025 AI 趋势问答助手</span>
+
       </div>
       <button onclick="toggleChat()" class="text-gray-400 hover:text-white">
         <i data-lucide="chevron-down" class="w-5 h-5"></i>
@@ -213,7 +233,9 @@
           <i data-lucide="bot" class="w-4 h-4 text-white"></i>
         </div>
         <div class="bg-white/10 p-3 rounded-lg rounded-tl-none text-xs text-gray-200">
+
           你好！我是这份 AI 趋势报告的智能助手。你可以问我：
+
           <ul class="list-disc pl-4 mt-2 space-y-1 text-gray-400">
             <li>哪几个趋势最值得投资？</li>
             <li>解释一下什么是“具身智能”。</li>
@@ -231,6 +253,7 @@
       </form>
     </div>
   </div>
+
 
   <div class="page-viewport relative w-full max-w-[1120px] aspect-[1/1.414] shadow-2xl overflow-hidden transition-all duration-700 bg-gradient-to-br from-[#05070F] via-[#0B1120] to-[#0B1B2D] text-white rounded-[32px] neon-ring">
     <div class="absolute inset-0 pointer-events-none opacity-30">
@@ -265,20 +288,26 @@
           </div>
           <div class="image-frame h-[420px]">
             <img src="https://image.pollinations.ai/prompt/ultra%20futuristic%20ai%20magazine%20cover%20glowing%20neon%20grid%20holographic%20interface%20deep%20space%20cinematic%20lighting?width=800&height=1000&nologo=true" alt="AI Magazine Cover" class="w-full h-full object-cover" />
+
           </div>
         </div>
 
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
+
           <span>封面 · 未来科技视觉系统</span>
+
           <span class="text-white/20 font-display text-3xl">01</span>
         </footer>
       </section>
 
+
       <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
+
         <header class="flex justify-between items-center">
           <h2 class="text-3xl font-bold">目录 · 2025 AI 特刊</h2>
           <span class="text-xs text-slate-400">CONTENTS</span>
         </header>
+
         <div class="mt-8 grid grid-cols-2 gap-6 text-sm text-slate-300">
           <div class="space-y-4">
             <div class="toc-item glass-panel rounded-2xl p-4">
@@ -298,11 +327,13 @@
               <p class="font-semibold">大模型推理时代：多模态应用与 AI 编程革新</p>
             </div>
             <div class="toc-item glass-panel rounded-2xl p-4">
+
               <p class="text-sky-300 text-xs tracking-[0.2em]">专题五</p>
               <p class="font-semibold">CUA（Computer-Using Agent）概念与实现方式</p>
             </div>
           </div>
           <div class="space-y-4">
+
             <div class="toc-item glass-panel rounded-2xl p-4">
               <p class="text-cyan-300 text-xs tracking-[0.2em]">专题六</p>
               <p class="font-semibold">六大 AI 巨头战略比较：Google、OpenAI、阿里云、华为、百度、火山引擎</p>
@@ -320,19 +351,23 @@
               <p class="font-semibold">面向消费者的 AI 产品：AIGC 助手与 “Agentic Internet” 生态</p>
             </div>
             <div class="toc-item glass-panel rounded-2xl p-4">
+
               <p class="text-cyan-300 text-xs tracking-[0.2em]">专题十</p>
               <p class="font-semibold">算力成本降低与 AI 应用“普惠化”新格局</p>
             </div>
           </div>
         </div>
+
         <div class="mt-6 text-xs text-slate-400">
           <p>后续版块：AI 治理与合规、图像/视频生成前沿、黑科技术语科普、2026 趋势预测 —— 请在下方数据区补充文章内容。</p>
         </div>
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
           <span>目录页 · 可扩展文章结构</span>
+
           <span class="text-white/20 font-display text-3xl">02</span>
         </footer>
       </section>
+
 
       <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
         <header class="flex items-center justify-between">
@@ -340,37 +375,45 @@
             <p class="text-xs uppercase tracking-[0.25em] text-sky-300">Feature · Article 01</p>
             <h2 class="text-4xl font-bold mt-2">2025 年度 AI 十大趋势总结</h2>
             <p class="text-sm text-slate-400 mt-2">技术形态的跃迁 · 第 1 / 6 页</p>
+
           </div>
           <button onclick="openArticleDetail()" class="ai-trigger px-4 py-2 text-xs rounded-full border border-sky-400/40 text-sky-200 hover:bg-sky-500/20">
             点击标题查看全文
           </button>
         </header>
+
         <div class="page-grid mt-10">
           <div class="space-y-6">
             <div class="glass-panel rounded-2xl p-6">
               <p class="text-xs text-sky-300 uppercase tracking-[0.2em]">导语</p>
               <p class="text-base text-slate-200 leading-relaxed mt-3">
                 2025 的 AI 生态进入系统级重构：从算力工厂、芯片演进到多模态应用的爆发，技术栈与商业模式同时刷新。本文将以六个双数页展开“趋势图谱”，帮助读者快速建立技术与产业的双重坐标。
+
               </p>
             </div>
             <div class="glass-panel rounded-2xl p-6">
               <p class="text-xs text-slate-400">阅读方式</p>
               <ul class="mt-3 text-sm text-slate-300 space-y-2 list-disc pl-4">
+
                 <li>每页两栏，保持轻阅读密度。</li>
                 <li>趋势标题可点击打开全量解析。</li>
                 <li>右侧配高质科技视觉图像。</li>
+
               </ul>
             </div>
           </div>
           <div class="image-frame h-[420px]">
+
             <img src="https://image.pollinations.ai/prompt/ai%20data%20center%20megascale%20server%20hall%20neon%20blue%20lighting%20cinematic%20wide%20shot?width=900&height=1000&nologo=true" alt="AI Infrastructure" class="w-full h-full object-cover" />
           </div>
         </div>
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
           <span>趋势综述 · 内容更易扩展</span>
+
           <span class="text-white/20 font-display text-3xl">03</span>
         </footer>
       </section>
+
 
       <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
         <header class="flex items-center justify-between">
@@ -397,9 +440,11 @@
         </div>
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
           <span>趋势详解 · 轻文字密度</span>
+
           <span class="text-white/20 font-display text-3xl">04</span>
         </footer>
       </section>
+
 
       <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
         <header class="flex items-center justify-between">
@@ -426,9 +471,11 @@
         </div>
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
           <span>趋势详解 · 架构与推理</span>
+
           <span class="text-white/20 font-display text-3xl">05</span>
         </footer>
       </section>
+
 
       <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
         <header class="flex items-center justify-between">
@@ -455,9 +502,11 @@
         </div>
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
           <span>趋势详解 · 具身智能与 Agent</span>
+
           <span class="text-white/20 font-display text-3xl">06</span>
         </footer>
       </section>
+
 
       <section class="magazine-page w-1/8 h-full flex-shrink-0 p-14">
         <header class="flex items-center justify-between">
@@ -526,11 +575,14 @@
         <footer class="mt-8 pt-6 border-t border-white/10 flex justify-between text-xs text-slate-400">
           <span>编辑区 · 预留空间</span>
           <span class="text-white/20 font-display text-3xl">08</span>
+
         </footer>
       </section>
     </div>
 
+
     <div class="no-print absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-6 z-20 p-2 bg-[#050A14]/60 backdrop-blur-md rounded-full border border-white/10">
+
       <button onclick="prevPage()" class="text-gray-300 hover:text-white transition-colors p-1">
         <i data-lucide="chevron-left" class="w-6 h-6"></i>
       </button>
@@ -542,7 +594,9 @@
         <div class="w-2 h-2 rounded-full bg-white/30 transition-all hover:bg-white/50 cursor-pointer" onclick="goToPage(4)"></div>
         <div class="w-2 h-2 rounded-full bg-white/30 transition-all hover:bg-white/50 cursor-pointer" onclick="goToPage(5)"></div>
         <div class="w-2 h-2 rounded-full bg-white/30 transition-all hover:bg-white/50 cursor-pointer" onclick="goToPage(6)"></div>
+
         <div class="w-2 h-2 rounded-full bg-white/30 transition-all hover:bg-white/50 cursor-pointer" onclick="goToPage(7)"></div>
+
       </div>
       <button onclick="nextPage()" class="text-gray-300 hover:text-white transition-colors p-1">
         <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -554,12 +608,16 @@
     lucide.createIcons();
 
     let currentPage = 0;
+
     const totalPages = 8;
+
     const pagesContainer = document.getElementById('pages-container');
     const indicators = document.getElementById('page-indicators').children;
 
     function updatePage() {
+
       pagesContainer.style.transform = `translateX(-${currentPage * 12.5}%)`;
+
       for (let i = 0; i < totalPages; i++) {
         if (i === currentPage) {
           indicators[i].classList.remove('bg-white/30');
@@ -687,6 +745,7 @@
         loadingSpinner.classList.add('hidden');
         modalContent.innerHTML = `
           <p><strong>全文占位说明：</strong></p>
+
           <p>这里将放置完整的文章内容。你可以在 <code>articleData</code> 里统一编辑段落，然后在这里渲染。</p>
           <p>建议包含：趋势总述、重点案例、结论与行动建议。</p>
         `;
@@ -706,6 +765,7 @@
             <li><strong>调文本密度：</strong>使用 <code>.column-text</code> 保持双栏阅读。</li>
             <li><strong>替换图片：</strong>更换 image.pollinations.ai 链接以获取更强科技感画面。</li>
           </ul>
+
         `;
       }, 600);
     }
@@ -806,7 +866,9 @@
           backgroundColor: null,
         });
         const link = document.createElement('a');
+
         link.download = `AI_Magazine_Page_${currentPage + 1}.png`;
+
         link.href = canvas.toDataURL('image/png');
         link.click();
       } catch (err) {
@@ -821,7 +883,9 @@
     function toggleTheme() {
       const pageView = document.querySelector('.page-viewport');
       const modalBox = document.querySelector('#ai-modal > div');
+
       const nav = document.querySelector('.no-print.absolute.bottom-8');
+
       const chatBox = document.getElementById('chat-widget');
 
       if (pageView.classList.contains('bg-gradient-to-br')) {
